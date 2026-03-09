@@ -135,7 +135,7 @@ def failure(message_id: Any, code: int, message: str) -> None:
 
 def parse_request(arguments: Dict[str, Any]) -> AppendRequest:
     file_path = arguments.get("file_path")
-    text = arguments.get("text")
+    text = arguments.get("text", "")
     remove_lines = arguments.get("remove_lines_from_end", 0)
     ensure_trailing_newline = arguments.get("ensure_trailing_newline", False)
 
@@ -247,6 +247,7 @@ def handle_tools_list(message_id: Any) -> None:
                             },
                             "text": {
                                 "type": "string",
+                                "default": "",
                                 "description": "Text to append after trimming.",
                             },
                             "remove_lines_from_end": {
@@ -261,7 +262,7 @@ def handle_tools_list(message_id: Any) -> None:
                                 "description": "If true, ensure the final file ends with a newline.",
                             },
                         },
-                        "required": ["file_path", "text"],
+                        "required": ["file_path"],
                         "additionalProperties": False,
                     },
                 }

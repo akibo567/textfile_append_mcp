@@ -7,6 +7,7 @@ from server import (
     append_with_trim,
     compute_updated_text,
     negotiate_protocol_version,
+    parse_request,
 )
 
 
@@ -55,6 +56,15 @@ class AppendWithTrimTests(unittest.TestCase):
             )
 
             self.assertEqual(path.read_text(encoding="utf-8"), "hello world\n")
+
+
+class ParseRequestTests(unittest.TestCase):
+    def test_text_defaults_to_empty_string_when_omitted(self) -> None:
+        request = parse_request({"file_path": "/tmp/example.txt"})
+
+        self.assertEqual(request.text, "")
+        self.assertEqual(request.remove_lines_from_end, 0)
+        self.assertFalse(request.ensure_trailing_newline)
 
 
 class ProtocolTests(unittest.TestCase):

@@ -9,7 +9,7 @@
 引数:
 
 - `file_path` (`string`, 必須): 対象ファイルのパス
-- `text` (`string`, 必須): 追記する文字列
+- `text` (`string`, 任意, デフォルト `""`): 追記する文字列
 - `remove_lines_from_end` (`integer`, 任意, デフォルト `0`): 末尾から削除する行数
 - `ensure_trailing_newline` (`boolean`, 任意, デフォルト `false`): 最終的にファイル末尾を改行で終わらせる
 
