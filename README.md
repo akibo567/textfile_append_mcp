@@ -53,7 +53,7 @@ python3 -m unittest test_server.py
 }
 ```
 
-###Codexの場合(プロジェクトの.codex/setting.tomlで設定を推奨)
+### Codexの場合(プロジェクトの.codex/setting.tomlで設定を推奨)
 ```
 [mcp_servers.textfile_append]
 command = "/usr/bin/python3"
