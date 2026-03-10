@@ -52,3 +52,12 @@ python3 -m unittest test_server.py
   }
 }
 ```
+
+###Codexの場合(プロジェクトの.codex/setting.tomlで設定を推奨)
+```
+[mcp_servers.textfile_append]
+command = "/usr/bin/python3"
+args = ["[このMCPサーバープロジェクトの絶対パス]/server.py"]
+cwd = "[利用プロジェクトトップの絶対パス]"
+required = true
+```
